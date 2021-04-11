@@ -68,15 +68,19 @@ public class Student extends Person {
      */
     public String takeCourse(Staff courseTeacher, String courseName) {
 
-        String instruction = "";
+//        if (this.coursesTakenByStudent.contains(courseName)){
+//
+//        }
+
+//        String instruction = "";
         for (int i = 0; i < this.coursesTakenByStudent.size(); i++) {
             if (!(this.isExpelled()) && courseName.equals(this.coursesTakenByStudent.get(i)) && courseName.equals(courseTeacher.getCourseTaughtByStaff())) {
-                instruction = this.getName() + " is currently taking " + courseTeacher.getCourseTaughtByStaff() + " taught by " + courseTeacher.getName() + " in the classroom";
+                return this.getName() + " is currently taking " + courseTeacher.getCourseTaughtByStaff() + " taught by " + courseTeacher.getName() + " in the classroom";
             }else {
-                instruction = this.getName() + " can not take " + courseName;
+                return this.getName() + " can not take " + courseName;
             }
         }
-        return instruction;
+//        return instruction;
     }
 
     /**

@@ -8,10 +8,11 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class PrincipalTest {
 
     private Principal principal = new Principal("Cynthia");
+    Applicant applicant;
 
     @BeforeEach
     public void setUp(){
-        Applicant applicant = new Applicant("Chigoziri",Gender.MALE,18);
+        applicant = new Applicant("Chigoziri",Gender.MALE,18);
         Student student = new Student("Victor",Gender.MALE);
     }
 
@@ -22,6 +23,7 @@ public class PrincipalTest {
     public void admitApplicantTest(){
         Applicant applicant1 = new Applicant("Chigoziri",Gender.MALE, 18);
         Applicant applicant2 = new Applicant("Chioma",Gender.FEMALE, 23);
+
 
         assertEquals((applicant1.getName() + " has been admitted to the school"),principal.admitApplicant(applicant1, 83));
         assertEquals((applicant2.getName() + " has not been admitted to the school"),principal.admitApplicant(applicant2,71));
